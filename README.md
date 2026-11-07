@@ -19,23 +19,21 @@
 1. [Nama Program](#1-nama-program)
 2. [Deskripsi Singkat](#2-deskripsi-singkat)
 3. [Fitur Utama Program](#3-fitur-utama-program)
-4. [Tech Stack](#4-tech-stack)
-5. [Perancangan Sistem](#5-perancangan-sistem)
+4. [Tech Stack (Bahasa, database, framework, library)](#4-tech-stack-bahasa-database-framework-library)
+5. [Perancangan Sistem (Flowchart, Use Case, ERD)](#5-perancangan-sistem-flowchart-use-case-erd)
 6. [Struktur Folder/Package](#6-struktur-folderpackage)
-7. [Penerapan 4 Pilar OOP](#7-penerapan-4-pilar-oop)
-8. [Cara Penggunaan Program](#8-cara-penggunaan-program)
-9. [Kontributor](#9-kontributor)
+7. [Penjelasan Penerapan 4 Pilar OOP di dalam program](#7-penjelasan-penerapan-4-pilar-oop-di-dalam-program)
+8. [Cara Penggunaan Program (sertakan screenshot GUI)](#8-cara-penggunaan-program-sertakan-screenshot-gui)
+9. [Kontributor (Nama dan NIM)](#9-kontributor-nama-dan-nim)
 
 ---
 
 ## 1. Nama Program
-
 **BrinkMikro**: Sistem Informasi Tabungan dan Pembiayaan bagi UMKM.
 
 Kata "Mikro" merujuk pada skala usaha dan layanan keuangan yang dituju, yaitu pedagang UMKM dan petani.
 
 ## 2. Deskripsi Singkat
-
 Petani dan pedagang UMKM sering kesulitan mengelola keuangan karena pendapatan yang tidak menentu (pedagang mengikuti penjualan harian, petani mengikuti musim tanam dan panen) serta terbatasnya akses ke layanan keuangan yang sesuai. Pencatatan manual membuat riwayat transaksi sulit ditelusuri dan angsuran sulit dipantau.
 
 BrinkMikro dirancang sebagai sistem informasi yang menyatukan data **pengguna, nasabah, rekening tabungan, transaksi tabungan, pengajuan pembiayaan, dan angsuran** dalam satu basis data terstruktur. Setiap petugas memakai aplikasi sesuai perannya (**Admin, Teller, Manajer**), sedangkan keputusan pembiayaan tetap berada di tangan Manajer sesuai batas kewenangannya.
@@ -58,7 +56,6 @@ Proyek ini berkaitan dengan tiga tujuan Sustainable Development Goals (SDGs):
 | Integrasi GUI ↔ DAO | 🔧 Sedang berjalan. Tabel pada form saat ini masih memakai `DefaultTableModel` di memori, sedangkan koneksi ke database baru aktif pada proses login |
 
 ## 3. Fitur Utama Program
-
 ### 3.1 Fitur per Role
 
 | Role | Menu | Kegunaan |
@@ -103,8 +100,7 @@ Proyek ini berkaitan dengan tiga tujuan Sustainable Development Goals (SDGs):
 | **Pencatatan lengkap** | Nasabah baru disimpan bersama detail Petani atau UMKM. Pengguna baru disimpan bersama detail Admin, Teller, atau Manajer. |
 | **Monitoring** | Dashboard kas (saldo tabungan, pembiayaan cair, angsuran masuk), daftar jatuh tempo dengan sisa kewajiban, dan rekap pembiayaan per jenis nasabah dan status. |
 
-## 4. Tech Stack
-
+## 4. Tech Stack (Bahasa, database, framework, library)
 | Komponen | Teknologi | Kegunaan |
 |---|---|---|
 | Bahasa pemrograman | **Java 17** | Logika aplikasi dan penerapan OOP |
@@ -118,8 +114,7 @@ Proyek ini berkaitan dengan tiga tujuan Sustainable Development Goals (SDGs):
 | IDE | **Apache NetBeans** | Pengembangan dan GUI Builder |
 | Version control | **Git dan GitHub** | Kolaborasi tim |
 
-## 5. Perancangan Sistem
-
+## 5. Perancangan Sistem (Flowchart, Use Case, ERD)
 > Diagram diekspor dari diagrams.net. Letakkan file gambar pada folder `docs/diagram/` agar tampil di GitHub.
 
 ### 5.1 Flowchart
@@ -151,7 +146,7 @@ Empat aktor berinteraksi dengan sistem:
 | **Manajer** | Meninjau data, memutuskan pembiayaan, memantau angsuran dan jatuh tempo, melihat dashboard dan rekap laporan |
 | **Nasabah** | Mengajukan pembiayaan, melihat informasi pengajuan dan angsuran, menerima keputusan pembiayaan |
 
-<img width="1128" height="1556" alt="Use Case BrinkMikro drawio (3)" src="https://github.com/user-attachments/assets/d9a9df10-7f6f-41ec-83b8-6fc0ba6eb09a" />
+<img width="1128" height="1556" alt="Use Case BrinkMikro drawio (3)" src="https://github.com/user-attachments/assets/a141e360-83a9-4094-a02a-9456dfa94af8" />
 
 ### 5.3 Entity Relationship Diagram (ERD)
 
@@ -180,7 +175,6 @@ Basis data `brinkmikro` terdiri dari **11 tabel**:
 ![ERD Relational](docs/diagram/erd-relational.png)
 
 ## 6. Struktur Folder/Package
-
 > ⚠️ Struktur berikut adalah kondisi project **saat ini** dan dapat berubah seiring penyelesaian integrasi GUI.
 
 ### 6.1 Tampilan Struktur
@@ -233,8 +227,7 @@ BrinkMikro
 | `app.service` | `AuthService` | Logika login: validasi kredensial, hitung percobaan gagal, kunci akun |
 | `app.view` | 19 form | Antarmuka Swing. Setiap form memiliki pasangan file `.form` dari NetBeans GUI Builder |
 
-## 7. Penerapan 4 Pilar OOP
-
+## 7. Penjelasan Penerapan 4 Pilar OOP di dalam program
 ### 7.1 Encapsulation (Enkapsulasi)
 
 Atribut dibuat `protected` atau `private` dan hanya dapat dibaca atau diubah lewat *getter* dan *setter*. Pada `AuthService`, hasil login dibungkus class `LoginResult` yang seluruh atributnya `private final` sehingga **tidak dapat diubah** setelah dibuat.
@@ -392,8 +385,7 @@ try {
 
 </details>
 
-## 8. Cara Penggunaan Program
-
+## 8. Cara Penggunaan Program (sertakan screenshot GUI)
 ### 8.1 Prasyarat
 
 - JDK 17 atau lebih baru
@@ -441,62 +433,379 @@ Gunakan akun berikut (data contoh):
 
 ### 8.5 Halaman Login
 
-Pilih **role**, isi **username** dan **password**, lalu klik **Login**. Centang *Show Password* untuk menampilkan kata sandi, dan klik **Reset** untuk mengosongkan isian. Jika kredensial atau role tidak sesuai, sistem menampilkan pesan peringatan.
+Halaman Login adalah pintu masuk seluruh pengguna. Dari sini pengguna diarahkan ke halaman sesuai role: Admin ke **Data Pengguna**, Teller ke **Data Nasabah**, dan Manajer ke **Dashboard Kas**.
 
-![Halaman Login](docs/screenshots/login.png)
+<p align="center">
+  <img src="docs/screenshots/login.png" alt="Halaman Login" width="700">
+</p>
+
+**Langkah penggunaan:**
+
+1. Jalankan aplikasi hingga halaman **BrinkMikro** muncul.
+2. Isi kolom **Username / ID Teller**.
+3. Isi kolom **Password**. Centang **Tampilkan Password** bila ingin melihat karakter yang diketik.
+4. Pilih role pada dropdown (**Admin**, **Teller**, atau **Manajer**).
+5. Klik **Login**. Jika berhasil, muncul pesan "Login Berhasil" lalu halaman utama role terbuka.
+6. Jika username, password, atau role tidak sesuai, muncul pesan peringatan dan Anda tetap berada di halaman login. Jika database tidak dapat dihubungi, muncul pesan "Koneksi ke database terputus".
+7. Klik **Reset** untuk mengosongkan seluruh isian.
+
+> 📝 **Catatan:** pada versi saat ini, data pada tabel di setiap form disimpan di memori selama aplikasi berjalan dan integrasinya ke database masih dalam pengerjaan. Logika penyimpanan ke database sudah tersedia di package `dao`.
 
 ### 8.6 Role Admin
 
-Setelah login, Admin masuk ke **Data Pengguna** dan dapat berpindah menu lewat panel navigasi di sisi kiri (tujuh menu).
+Admin memiliki tujuh menu yang selalu tersedia pada panel *Menu Navigasi* di sisi kiri. Tombol **Logout** di bagian bawah panel mengembalikan Admin ke halaman login setelah konfirmasi.
 
-| Menu | Cara Pakai | Screenshot |
-|---|---|---|
-| **Data Pengguna** | Cari username/nama, lalu tambah, ubah, atau hapus pengguna | ![](docs/screenshots/admin-pengguna.png) |
-| **Data Nasabah** | Kelola data induk nasabah (NIK, nama, jenis, telepon, alamat) | ![](docs/screenshots/admin-nasabah.png) |
-| **Rekening Tabungan** | Buka rekening, ubah status, atau tutup rekening | ![](docs/screenshots/admin-rekening.png) |
-| **Transaksi Tabungan** | Catat setor atau tarik tunai | ![](docs/screenshots/admin-transaksi.png) |
-| **Pengajuan Pembiayaan** | Input pengajuan baru dan verifikasi berkas | ![](docs/screenshots/admin-pengajuan.png) |
-| **Data Angsuran** | Catat tagihan dan pembayaran angsuran | ![](docs/screenshots/admin-angsuran.png) |
-| **Monitoring dan Laporan** | Lihat audit log dan ringkasan operasional | ![](docs/screenshots/admin-monitoring.png) |
+#### 8.6.1 Data Pengguna
+
+Halaman pertama yang terbuka setelah login sebagai Admin. Digunakan untuk mengelola akun yang dapat masuk ke sistem beserta hak aksesnya.
+
+<p align="center">
+  <img src="docs/screenshots/admin-pengguna.png" alt="Data Pengguna" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Data Pengguna** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **ID User**, **Username**, **Password**, **Nama Lengkap**, **Role / Akses**, **Status Akun**, **Tanggal Dibuat**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari Username/Nama**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Data Pengguna**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Pengguna**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Pengguna**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.6.2 Data Nasabah
+
+Digunakan untuk mengelola data induk nasabah, baik petani maupun pedagang UMKM.
+
+<p align="center">
+  <img src="docs/screenshots/admin-nasabah.png" alt="Data Nasabah" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Data Nasabah** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **NIK**, **Nama Nasabah**, **Jenis Nasabah**, **No. Telepon**, **Alamat Domisili**, **Tanggal Daftar**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari NIK/Nama**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Data Nasabah**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Nasabah**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Nasabah**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.6.3 Rekening Tabungan
+
+Digunakan untuk membuka rekening nasabah, mengatur status rekening, dan menutup rekening.
+
+<p align="center">
+  <img src="docs/screenshots/admin-rekening.png" alt="Rekening Tabungan" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Rekening Tabungan** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **No. Rekening**, **NIK Nasabah**, **Saldo (Rp)**, **Status Rekening**, **Tgl Pembukaan**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari No. Rek/Nama**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Buka Rekening**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Status Rekening**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Tutup Rekening**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.6.4 Transaksi Tabungan
+
+Digunakan untuk mencatat transaksi setor dan tarik tunai pada rekening nasabah.
+
+<p align="center">
+  <img src="docs/screenshots/admin-transaksi.png" alt="Transaksi Tabungan" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Transaksi Tabungan** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **ID Transaksi**, **No. Rekening**, **Jenis Transaksi**, **Jumlah (Rp)**, **Waktu Transaksi**, **ID Teller**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari ID TRX/No. Rek**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Setor / Tarik Tunai**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Transaksi**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Transaksi**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.6.5 Pengajuan Pembiayaan
+
+Digunakan untuk mencatat pengajuan pembiayaan petani dan UMKM serta memverifikasi berkasnya.
+
+<p align="center">
+  <img src="docs/screenshots/admin-pengajuan.png" alt="Pengajuan Pembiayaan" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Pengajuan Pembiayaan** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **ID Pembiayaan**, **NIK Nasabah**, **Jumlah Pengajuan**, **Jangka Waktu (Bln)**, **Skema Pembiayaan**, **Status Pembiayaan**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari No. Pengajuan/NIK**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Pengajuan Baru**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Verifikasi Berkas**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Batal Pengajuan**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.6.6 Data Angsuran
+
+Digunakan untuk mencatat tagihan dan pembayaran angsuran pembiayaan.
+
+<p align="center">
+  <img src="docs/screenshots/admin-angsuran.png" alt="Data Angsuran" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Data Angsuran** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **ID Angsuran**, **ID Pembiayaan**, **Angsuran Ke**, **Jumlah Bayar (Rp)**, **Denda (Rp)**, **Tanggal Bayar**, **ID Teller**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari ID Angsuran/Pembiayaan**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Bayar Angsuran**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Tagihan**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Entry**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.6.7 Monitoring dan Laporan
+
+Digunakan untuk memantau audit log dan ringkasan operasional sistem.
+
+<p align="center">
+  <img src="docs/screenshots/admin-monitoring.png" alt="Monitoring dan Laporan" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Monitoring dan Laporan** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **Timestamp**, **User / Operator**, **Modul**, **Aktivitas System**, **IP Address**, **Status Audit**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari Activity/User**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Log Baru**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Audit Log**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Log**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
 
 ### 8.7 Role Teller
 
-Teller langsung menuju **Data Nasabah** dan memiliki lima menu layanan loket.
+Teller memiliki lima menu layanan loket pada panel *Menu Navigasi*. Tombol **Logout** mengembalikan Teller ke halaman login setelah konfirmasi.
 
-| Menu | Cara Pakai | Screenshot |
-|---|---|---|
-| **Data Nasabah** | Daftarkan nasabah baru dan perbarui datanya | ![](docs/screenshots/teller-nasabah.png) |
-| **Rekening Tabungan** | Cek saldo dan mutasi rekening | ![](docs/screenshots/teller-rekening.png) |
-| **Setor Tunai** | Input nomor rekening dan nominal setoran | ![](docs/screenshots/teller-setor.png) |
-| **Tarik Tunai** | Input nomor rekening dan nominal penarikan | ![](docs/screenshots/teller-tarik.png) |
-| **Pembayaran Angsuran** | Terima pembayaran angsuran berdasarkan nomor pembiayaan | ![](docs/screenshots/teller-angsuran.png) |
+#### 8.7.1 Data Nasabah
+
+Halaman pertama yang terbuka setelah login sebagai Teller. Digunakan untuk mendaftarkan dan memperbarui data nasabah di loket.
+
+<p align="center">
+  <img src="docs/screenshots/teller-nasabah.png" alt="Data Nasabah" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Data Nasabah** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **NIK**, **Nama Lengkap**, **Kategori Nasabah**, **No. Telepon**, **Alamat Domisili**, **Tanggal Daftar**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari NIK/Nama**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Nasabah Baru**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Data Nasabah**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Nasabah**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.7.2 Rekening Tabungan
+
+Digunakan untuk memeriksa saldo dan mutasi rekening nasabah.
+
+<p align="center">
+  <img src="docs/screenshots/teller-rekening.png" alt="Rekening Tabungan" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Rekening Tabungan** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **Waktu Transaksi**, **ID Transaksi**, **No. Rekening**, **Jenis Mutasi**, **Kredit (Rp)**, **Debet (Rp)**, **Saldo Akhir**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari No. Rek/Nama**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Mutasi Baru**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Mutasi**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Record**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.7.3 Setor Tunai
+
+Digunakan untuk melayani setoran tunai nasabah di loket.
+
+<p align="center">
+  <img src="docs/screenshots/teller-setor.png" alt="Setor Tunai" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Setor Tunai** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **ID Setor**, **No. Rekening**, **Nama Nasabah**, **Nominal Setoran (Rp)**, **Petugas Teller**, **Tanggal**, **Status**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari Kode/No. Rek**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Setor Tunai Baru**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Setoran**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Setoran**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.7.4 Tarik Tunai
+
+Digunakan untuk melayani penarikan tunai nasabah di loket.
+
+<p align="center">
+  <img src="docs/screenshots/teller-tarik.png" alt="Tarik Tunai" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Tarik Tunai** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **ID Tarik**, **No. Rekening**, **Nama Nasabah**, **Nominal Penarikan (Rp)**, **Verifikasi PIN**, **Tanggal**, **Status**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari Kode/No. Rek**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Penarikan Baru**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Penarikan**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Penarikan**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.7.5 Pembayaran Angsuran
+
+Digunakan untuk menerima pembayaran angsuran pembiayaan nasabah.
+
+<p align="center">
+  <img src="docs/screenshots/teller-angsuran.png" alt="Pembayaran Angsuran" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Pembayaran Angsuran** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **ID Pembiayaan**, **Nama Nasabah**, **Angsuran Ke**, **Tgl Jatuh Tempo**, **Nominal Tagihan**, **Denda**, **Status Pembayaran**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari No. Pembiayaan**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Bayar Angsuran**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Bukti Bayar**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Pembayaran**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
 
 ### 8.8 Role Manajer
 
-Manajer langsung menuju **Dashboard Kas** dan memiliki enam menu pemantauan.
+Manajer memiliki enam menu pemantauan dan persetujuan pada panel *Menu Navigasi*. Tombol **Logout** mengembalikan Manajer ke halaman login setelah konfirmasi.
 
-| Menu | Cara Pakai | Screenshot |
-|---|---|---|
-| **Dashboard Kas** | Pantau posisi kas dan likuiditas | ![](docs/screenshots/manajer-dashboard.png) |
-| **Jatuh Tempo** | Pantau pembiayaan jatuh tempo dan tunggakan | ![](docs/screenshots/manajer-jatuhtempo.png) |
-| **Persetujuan Pembiayaan** | Pilih pengajuan, lalu setujui atau tolak | ![](docs/screenshots/manajer-persetujuan.png) |
-| **Rekap Laporan** | Lihat rekap laporan keuangan dan operasional | ![](docs/screenshots/manajer-rekap.png) |
-| **Riwayat Transaksi** | Telusuri seluruh riwayat transaksi sistem | ![](docs/screenshots/manajer-riwayat.png) |
-| **Master Tabel Angsuran** | Lihat seluruh angsuran nasabah | ![](docs/screenshots/manajer-angsuran.png) |
+#### 8.8.1 Dashboard Kas
 
-### 8.9 Fungsi Tombol Umum
+Halaman pertama yang terbuka setelah login sebagai Manajer. Menampilkan posisi kas dan likuiditas.
 
-| Komponen | Fungsi |
-|---|---|
-| **Tombol tambah** (`+ ...`) | Membuka dialog input data baru. Semua kolom wajib diisi |
-| **Tombol ubah** (`Update ...`) | Mengubah baris yang dipilih pada tabel |
-| **Tombol hapus** (`Hapus ...`) | Menghapus baris yang dipilih setelah konfirmasi |
-| **Kolom Cari** | Menyaring tabel secara langsung saat mengetik |
-| **Menu Navigasi** | Berpindah antarform sesuai hak akses role |
-| **Logout** | Kembali ke halaman login |
+<p align="center">
+  <img src="docs/screenshots/manajer-dashboard.png" alt="Dashboard Kas" width="850">
+</p>
 
-## 9. Kontributor
+**Langkah penggunaan:**
 
+1. Klik menu **Dashboard Kas** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **Unit / Vault Kas**, **Saldo Awal**, **Inflow (Masuk)**, **Outflow (Keluar)**, **Saldo Akhir**, **Status Likuiditas**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari Unit/Vault**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Vault / Kas Baru**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak.
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Position Kas**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Vault**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.8.2 Jatuh Tempo
+
+Digunakan untuk memantau pembiayaan yang jatuh tempo, tunggakan, dan kolektibilitasnya.
+
+<p align="center">
+  <img src="docs/screenshots/manajer-jatuhtempo.png" alt="Jatuh Tempo" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Jatuh Tempo** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **ID Pembiayaan**, **Nama Nasabah**, **Sektor Usaha**, **Tgl Jatuh Tempo**, **Tunggakan (Rp)**, **Keterlambatan**, **Kolektibilitas**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari Nasabah/NPL**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Tambah Data NPL**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Status NPL**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Data NPL**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.8.3 Persetujuan Pembiayaan
+
+Digunakan Manajer untuk meninjau pengajuan dan menentukan status persetujuannya.
+
+<p align="center">
+  <img src="docs/screenshots/manajer-persetujuan.png" alt="Persetujuan Pembiayaan" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Persetujuan Pembiayaan** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **ID Pembiayaan**, **NIK Nasabah**, **Nama Nasabah**, **Sektor Usaha**, **Plafon Diminta**, **Tenor**, **Status Approval**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari No. Registrasi**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Pengajuan Komite**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak.
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Approval Status**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Pengajuan**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.8.4 Rekap Laporan
+
+Digunakan untuk melihat dan menyusun rekap laporan keuangan dan operasional periodik.
+
+<p align="center">
+  <img src="docs/screenshots/manajer-rekap.png" alt="Rekap Laporan" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Rekap Laporan** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **Kode Laporan**, **Nama Laporan**, **Periode Laporan**, **Dibuat Oleh**, **Tanggal Generate**, **Format Output**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari Laporan**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Generate Laporan Baru**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Detail Laporan**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Laporan**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.8.5 Riwayat Transaksi
+
+Digunakan untuk menelusuri audit trail seluruh transaksi sistem.
+
+<p align="center">
+  <img src="docs/screenshots/manajer-riwayat.png" alt="Riwayat Transaksi" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Riwayat Transaksi** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **ID Transaksi**, **Waktu**, **Operator / Teller**, **Modul System**, **Deskripsi Transaksi**, **Nominal (Rp)**, **Status**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari ID TRX/User**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Entry Log Manual**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak. Kolom tanggal/waktu wajib memakai format `dd-MM-yyyy` (contoh `10-01-2026`).
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Status Log**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Log Transaksi**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+#### 8.8.6 Master Tabel Angsuran
+
+Digunakan untuk melihat seluruh data angsuran semua nasabah.
+
+<p align="center">
+  <img src="docs/screenshots/manajer-angsuran.png" alt="Master Tabel Angsuran" width="850">
+</p>
+
+**Langkah penggunaan:**
+
+1. Klik menu **Master Tabel Angsuran** pada panel *Menu Navigasi* di sisi kiri layar.
+2. Tabel menampilkan kolom **ID Angsuran**, **ID Pembiayaan**, **Nama Nasabah**, **Angsuran Ke**, **Nominal (Rp)**, **Jatuh Tempo**, **Status Pembayaran**.
+3. Untuk mencari data, ketik kata kunci pada kolom **Cari No. Pembiayaan**. Tabel langsung tersaring saat Anda mengetik.
+4. Untuk menambah data, klik tombol **+ Schedule Angsuran**. Isi seluruh kolom pada dialog yang muncul, lalu klik **OK**. Kolom yang kosong akan ditolak.
+5. Untuk mengubah data, klik satu baris pada tabel, klik **Update Status Angsuran**, ubah isian pada dialog, lalu klik **OK**.
+6. Untuk menghapus data, klik satu baris pada tabel, klik **Hapus Schedule**, lalu pilih **Yes** pada dialog konfirmasi.
+7. Jika tombol ubah atau hapus ditekan tanpa memilih baris, sistem menampilkan peringatan agar Anda memilih baris terlebih dahulu.
+
+
+## 9. Kontributor (Nama dan NIM)
 | Nama | NIM |
 |---|---|
 | **Kenny Giovanni Gavra** | 2509116003 |
