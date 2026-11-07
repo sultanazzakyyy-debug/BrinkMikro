@@ -2,7 +2,7 @@
 
 <p align="center">
   <b>Sistem Informasi Tabungan dan Pembiayaan bagi UMKM dan Petani</b><br>
-  Aplikasi desktop Java Swing + MySQL · Project Akhir Capstone &amp; Tugas Akhir PBO
+  Aplikasi desktop Java Swing + MySQL · Project Akhir Capstone
 </p>
 
 <p align="center">
