@@ -446,9 +446,7 @@ Admin memiliki tujuh menu yang selalu tersedia pada panel *Menu Navigasi* di sis
 
 Halaman pertama yang terbuka setelah login sebagai Admin. Digunakan untuk mengelola akun yang dapat masuk ke sistem beserta hak aksesnya.
 
-<p align="center">
-  <img src="docs/screenshots/admin-pengguna.png" alt="Data Pengguna" width="850">
-</p>
+<img width="1708" height="997" alt="Admin Data Pengguna" src="https://github.com/user-attachments/assets/4fa4ad2e-6086-417b-ad93-45985d267e2c" />
 
 **Langkah penggunaan:**
 
@@ -465,9 +463,7 @@ Halaman pertama yang terbuka setelah login sebagai Admin. Digunakan untuk mengel
 
 Digunakan untuk mengelola data induk nasabah, baik petani maupun pedagang UMKM.
 
-<p align="center">
-  <img src="docs/screenshots/admin-nasabah.png" alt="Data Nasabah" width="850">
-</p>
+<img width="1708" height="997" alt="Admin Data Nasabah" src="https://github.com/user-attachments/assets/40902cc6-7749-4826-915d-4bf31d437d7e" />
 
 **Langkah penggunaan:**
 
@@ -484,9 +480,7 @@ Digunakan untuk mengelola data induk nasabah, baik petani maupun pedagang UMKM.
 
 Digunakan untuk membuka rekening nasabah, mengatur status rekening, dan menutup rekening.
 
-<p align="center">
-  <img src="docs/screenshots/admin-rekening.png" alt="Rekening Tabungan" width="850">
-</p>
+<img width="1708" height="997" alt="Admin Rekening Tabungan" src="https://github.com/user-attachments/assets/f5c1e5fb-e051-4006-a6d1-55b1120d742a" />
 
 **Langkah penggunaan:**
 
@@ -503,9 +497,7 @@ Digunakan untuk membuka rekening nasabah, mengatur status rekening, dan menutup 
 
 Digunakan untuk mencatat transaksi setor dan tarik tunai pada rekening nasabah.
 
-<p align="center">
-  <img src="docs/screenshots/admin-transaksi.png" alt="Transaksi Tabungan" width="850">
-</p>
+<img width="1708" height="997" alt="admin Transaksi tabungan" src="https://github.com/user-attachments/assets/9a4cdfbe-af47-40c0-ad1f-10e8b673d66c" />
 
 **Langkah penggunaan:**
 
