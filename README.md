@@ -1,5 +1,3 @@
-<h1 align="center">🏦 BrinkMikro</h1>
-
 <p align="center">
   <b>Sistem Informasi Tabungan dan Pembiayaan bagi UMKM dan Petani</b><br>
   Aplikasi desktop Java Swing + MySQL · Project Akhir Capstone
@@ -115,8 +113,6 @@ Proyek ini berkaitan dengan tiga tujuan Sustainable Development Goals (SDGs):
 | Version control | **Git dan GitHub** | Kolaborasi tim |
 
 ## 5. Perancangan Sistem (Flowchart, Use Case, ERD)
-> Diagram diekspor dari diagrams.net. Letakkan file gambar pada folder `docs/diagram/` agar tampil di GitHub.
-
 ### 5.1 Flowchart
 
 Alur sistem dimulai dari **login**, lalu pengguna diarahkan ke submenu sesuai peran.
@@ -128,12 +124,13 @@ Alur sistem dimulai dari **login**, lalu pengguna diarahkan ke submenu sesuai pe
 | **Teller** | Tambah nasabah dan rekening, layani setor dan tarik tunai (validasi data dan saldo), catat pengajuan dan angsuran. |
 | **Manajer** | Lihat dashboard kas, jatuh tempo, rekap laporan, dan transaksi. Tinjau pengajuan, lalu simpan keputusan Disetujui atau Tidak Disetujui. |
 
-![Flowchart Login](docs/diagram/flowchart-login.png)
-![Flowchart Admin](docs/diagram/flowchart-admin.png)
-![Flowchart Teller](docs/diagram/flowchart-teller.png)
-![Flowchart Manajer](docs/diagram/flowchart-manajer.png)
+<img width="851" height="1071" alt="PA Capstone-Main System Flow drawio" src="https://github.com/user-attachments/assets/4f961757-b1ae-4669-9734-b6e53ac6049b" />
 
-🔗 [Sumber flowchart (diagrams.net)](https://app.diagrams.net/#G17ZA8wX00RmHssDlPSr7OFqnqkN4jBmiW#%7B%22pageId%22%3A%22BnzTX9ZRe5hTWhAEgd1e%22%7D)
+<img width="3902" height="1792" alt="PA Capstone-Subproses Admin drawio (1)" src="https://github.com/user-attachments/assets/28ba671d-7484-4a1b-8bca-d89feb4c9581" />
+
+<img width="851" height="1071" alt="PA Capstone-Main System Flow drawio" src="https://github.com/user-attachments/assets/acf777f6-b4bd-45c4-b6a5-2be7d71b6000" />
+
+<img width="1343" height="1487" alt="PA Capstone-Subproses Manager drawio" src="https://github.com/user-attachments/assets/184a0006-f6f2-4459-b125-08760ab83cab" />
 
 ### 5.2 Use Case Diagram
 
@@ -171,8 +168,11 @@ Basis data `brinkmikro` terdiri dari **11 tabel**:
 | `rekening_tabungan` | `transaksi_tabungan` | 1 : N | Satu rekening memiliki banyak transaksi |
 | `teller` | `transaksi_tabungan` / `angsuran` | 1 : N | Teller memproses transaksi dan angsuran |
 
-![ERD Logical](docs/diagram/erd-logical.png)
-![ERD Relational](docs/diagram/erd-relational.png)
+**ERD Logical**
+<img width="1751" height="909" alt="Logical" src="https://github.com/user-attachments/assets/a87fc8dd-7dfe-40d6-b370-d4e9aa29dd10" />
+
+**ERD Relational**
+<img width="1937" height="847" alt="Relational" src="https://github.com/user-attachments/assets/57e69ae5-f1f5-4931-9561-08e5a00a7118" />
 
 ## 6. Struktur Folder/Package
 > ⚠️ Struktur berikut adalah kondisi project **saat ini** dan dapat berubah seiring penyelesaian integrasi GUI.
@@ -232,9 +232,6 @@ BrinkMikro
 
 Atribut dibuat `protected` atau `private` dan hanya dapat dibaca atau diubah lewat *getter* dan *setter*. Pada `AuthService`, hasil login dibungkus class `LoginResult` yang seluruh atributnya `private final` sehingga **tidak dapat diubah** setelah dibuat.
 
-<details>
-<summary><b>💡 Lihat kode</b></summary>
-
 ```java
 // model/Pengguna.java
 public class Pengguna {
@@ -265,8 +262,6 @@ public static class LoginResult {
 }
 ```
 
-</details>
-
 ### 7.2 Inheritance (Pewarisan)
 
 Dua hierarki pewarisan merepresentasikan spesialisasi pada ERD:
@@ -275,9 +270,6 @@ Dua hierarki pewarisan merepresentasikan spesialisasi pada ERD:
 - `Petani` dan `PedagangUmkm` mewarisi **`Nasabah`**.
 
 Subclass memanggil `super(...)` dengan nilai `peran` atau `jenisNasabah` yang sudah ditetapkan, sehingga data induk dan data khusus tidak mungkin tertukar.
-
-<details>
-<summary><b>💡 Lihat kode</b></summary>
 
 ```java
 // model/Teller.java
@@ -323,9 +315,6 @@ Polimorfisme muncul dalam tiga bentuk:
 2. **Overriding.** Event handler Swing mengimplementasikan ulang method dari interface `DocumentListener` (`insertUpdate`, `removeUpdate`, `changedUpdate`) lewat anonymous class. Method yang dijalankan ditentukan saat runtime oleh objek listener-nya.
 3. **Substitusi objek.** `Admin`, `Teller`, dan `Manajer` adalah `Pengguna`, sehingga `AuthService.login()` cukup mengembalikan satu tipe `Pengguna` untuk semua peran.
 
-<details>
-<summary><b>💡 Lihat kode</b></summary>
-
 ```java
 // Overloading konstruktor (model/Admin.java)
 public Admin() {}
@@ -348,8 +337,6 @@ txtSearch.getDocument().addDocumentListener(new DocumentListener() {
     public void changedUpdate(DocumentEvent e) { filterSearch(); }
 });
 ```
-
-</details>
 
 ### 7.4 Abstraction (Abstraksi)
 
