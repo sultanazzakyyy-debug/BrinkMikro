@@ -151,9 +151,7 @@ Empat aktor berinteraksi dengan sistem:
 | **Manajer** | Meninjau data, memutuskan pembiayaan, memantau angsuran dan jatuh tempo, melihat dashboard dan rekap laporan |
 | **Nasabah** | Mengajukan pembiayaan, melihat informasi pengajuan dan angsuran, menerima keputusan pembiayaan |
 
-![Use Case Diagram](docs/diagram/usecase.png)
-
-🔗 [Sumber use case (diagrams.net)](https://app.diagrams.net/#G1Z_arGkt1AOVlCIjJgMsnT3eutyZWWJrr#%7B%22pageId%22%3A%22RoB-d6s71CKoell1Cr4Y%22%7D)
+<img width="1128" height="1556" alt="Use Case BrinkMikro drawio (3)" src="https://github.com/user-attachments/assets/d9a9df10-7f6f-41ec-83b8-6fc0ba6eb09a" />
 
 ### 5.3 Entity Relationship Diagram (ERD)
 
